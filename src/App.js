@@ -25,14 +25,14 @@ function App() {
     }
   }
 
-
+  
   return (
     
-    <div className="App">    
+    <div className="App"> 
       <div className='infoContainer'>
         <div className='Top'>
             <div className='location'>
-            <input  type="text" placeholder='Digite a locslizacao' 
+            <input id="searchBar "type="text" placeholder='Digite a locslizacao' 
             value={location}
             onKeyPress={searchLocation}
             onChange={event => setLocation(event.target.value)} 
@@ -40,7 +40,7 @@ function App() {
           </div>
           <div className='tempAtMoment'>
             <p>{data.name}</p>
-            <img id="icon" src = "" alt = "Weather icon"></img>
+            <img id="icon" src = "" alt =""></img>
             <div className="temperature">
               {data.main ? <h1>{data.main.temp}</h1>: null}
               {data.main ? <p>{data.weather[0].main}</p>: null}
@@ -50,15 +50,15 @@ function App() {
         <div className='bottom'>
           <div className='howItFeels'>
           {data.main ? <p>{data.main.feels_like}</p>: null}
-            <p>Sensacao termica</p>
+            <p className="teste">Sensacao termica</p>
           </div> 
           <div className='humidity'>
           {data.main ? <p>{data.main.humidity}</p>: null}
-            <p>umidade</p>
+          <p className="teste">dsa</p>
           </div>
-          <div className='windVel'>
+          <div className='windVel'> 
           {data.main ? <p>{data.wind.speed}</p>: null}
-            <p>velocidade do vento</p>
+          <p className="teste">velocidade do vento</p>
           </div>
         </div>
       </div>
