@@ -77,38 +77,37 @@ input {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   text-align: center;
-  align-items: center;
   display: flex;
+  flex-direction: row; /* Exibir as três divs lado a lado horizontalmente */
   width: 50%;
-  height: 7%;
+  height: fit-content;
   padding: 0.6rem;
   margin: 0.2rem auto;
   margin-bottom: 2px;
-  opacity: 1; /* Alterado para 1 para 100% de opacidade */
+  opacity: 1;
   justify-content: space-evenly;
 }
 
 .howItFeels,
 .humidity,
 .windVel {
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  line-height: 0.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  margin-top: 40px;
-
+  flex: 1; /* Distribuir o espaço horizontal igualmente */
 }
 
+.howItFeels .data,
+.humidity .data,
+.windVel .data {
+  margin-top: 10px; /* Espaço entre os parágrafos com os dados */
+}
 
 .howItFeels p,
 .humidity p,
 .windVel p {
-  margin-bottom: 20px; /* Ajuste a quantidade de espaço conforme necessário */
+  margin-top: 0; /* Reset da margem para os parágrafos com a classe "teste" */
 }
 .tempAtMoment {
   width: 100%;
@@ -117,7 +116,6 @@ input {
   justify-content: center;
   flex-direction: column;
   padding-top: 5%;
-  
 }
 
 .locationName { 
