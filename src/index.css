@@ -42,15 +42,14 @@ h1 {
 }
 
 .infoContainer {
-  width: 700px;
-  height: 715px;
+  width: 100%;
+  height: 104vh;
   margin: auto;
   padding: 0.1rem;
   position: relative;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
-  top: 10%;
 }
 
 input {
@@ -64,7 +63,8 @@ input {
   background: rgba(255,255,255, 0.1);
   font-size: 1.2rem;
   padding: 0.7rem 1.5rem; 
-  margin: 1rem auto;; 
+  margin: 0.rem auto;; 
+  top: 0;
 }
 
 ::placeholder {
@@ -83,16 +83,16 @@ input {
 }
 
 .tempAtMoment {
-  padding-top: 24rem;
+  width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 5%;
   
 }
 
 .locationName { 
-  position: absolute;
-  left: 50%;
-  margin-left: -50px;
-  padding-top: 5rem;
   font-size: 3rem;
   font-weight: bold;
   width: 100px;
@@ -101,4 +101,10 @@ input {
 
 .description p{
   font-size: 1.7rem;
+}
+
+.tempAtMoment img {
+  display: block; /* Necessário para o margin funcionar */
+  margin-left: auto; /* aqui */
+  margin-right: auto; /* e aqui */
 }

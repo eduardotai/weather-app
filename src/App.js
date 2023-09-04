@@ -19,7 +19,7 @@ function App() {
       axios.get(url).then((response) => {
         setData(response.data)
         console.log(response.data)
-  document.getElementById("icon").src = "https://openweathermap.org/img/wn/" + response.data.weather[0].icon + "@2x.png";
+  document.getElementById("icon").src = "https://openweathermap.org/img/wn/" + response.data.weather[0].icon + "@4x.png";
       })
       setLocation('')
     }
@@ -28,12 +28,7 @@ function App() {
 
   return (
     
-    <div className="App">
-      <div className='locationName'>
-        <p>
-          {data.name}
-        </p>
-        </div>      
+    <div className="App">    
       <div className='infoContainer'>
         <div className='Top'>
             <div className='location'>
@@ -44,12 +39,12 @@ function App() {
             />
           </div>
           <div className='tempAtMoment'>
-          <img id="icon" src = "" alt = "Weather icon"></img> 
-            {data.main ? <h1>{data.main.temp}</h1>: null}
-          </div>
-          <div className='description'> 
-          {data.main ? <p>{data.weather[0].main}</p>: null}
-
+            <p>{data.name}</p>
+            <img id="icon" src = "" alt = "Weather icon"></img>
+            <div className="temperature">
+              {data.main ? <h1>{data.main.temp}</h1>: null}
+              {data.main ? <p>{data.weather[0].main}</p>: null}
+            </div>
           </div>
         </div>
         <div className='bottom'>
