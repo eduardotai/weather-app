@@ -1,29 +1,33 @@
 import {React, useState} from 'react'
 import Axios from 'axios'
-
 import './index.css'
 import axios from 'axios'
 
 function App() {
 
 
-const [data, setData] = useState({})
+  const [data, setData] = useState({})
   
-const [location, setLocation] = useState('')
+  const [location, setLocation] = useState('')
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=7b23c6c1b79886f16b744523d1292e2a`
+  const [weather, setWeather ] = useState([])
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=7b23c6c1b79886f16b744523d1292e2a`
 
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
       axios.get(url).then((response) => {
         setData(response.data)
         console.log(response.data)
+  document.getElementById("icon").src = "https://openweathermap.org/img/wn/" + response.data.weather[0].icon + "@2x.png";
       })
       setLocation('')
     }
   }
 
+
   return (
+    
     <div className="App">
       <div className='locationName'>
         <p>
@@ -40,6 +44,7 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units
             />
           </div>
           <div className='tempAtMoment'>
+          <img id="icon" src = "" alt = "Weather icon"></img> 
             {data.main ? <h1>{data.main.temp}</h1>: null}
           </div>
           <div className='description'> 
@@ -64,7 +69,8 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units
       </div>
     </div>
   );
-}
+  }
+
 
 export default App
 
